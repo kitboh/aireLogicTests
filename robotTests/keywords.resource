@@ -6,8 +6,28 @@ Library           CustomLibrary.py
 
 
 *** Keywords ***
-Test
-   [Arguments]    ${url}
-    Open Browser    ${url}    Firefox
-    Maximize Browser Window
-    Click Button    input
+Create User
+   [Arguments]    ${test_user}
+    Input Text    name=name    ${test_user}
+    Click Button    locator=Start!
+
+Login as Test User
+    Create User    Test_User
+    Page Should Contain    text=Hello Test_User
+
+Add Cookies
+      [Arguments]    ${number_of_cookies}
+      FOR    ${element}    IN RANGE     0    ${number_of_cookies}
+         Click Button    Click Cookie!   
+         Sleep    50ms       
+      END
+
+Sell Cookies
+    [Arguments]    ${number_of_cookies}
+    Input Text    cookies-to-sell    ${number_of_cookies}
+    Click Button    sell-cookies
+
+Buy Factories
+    [Arguments]    ${number_of_factories}
+    Input Text    factories-to-buy    ${number_of_factories}
+    Click Button    buy-factories

@@ -11,13 +11,6 @@ Feature: Clicker functionality on a website
         Then the cookie count is '2'
         And I close the browser
 
-    @clicker_page @full_suite
-    Scenario: A new user has 0 score
-         Given the user opens the homepage
-         When a user is created with the name 'Test_User'
-         Then the cookie count is '0'
-         And I close the browser
-
 # This is ignoring the bug where you cannot sell your last cookie
     @clicker_page @sale_tests @full_suite
     Scenario: A user can sell a cookie

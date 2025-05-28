@@ -11,12 +11,3 @@ Users can buy factories without having the necessary money to purchase one.
 **Actual Results**
 * User goes into debt, and factories are purchased (see factoryloans.png)
 
-
-**Recreation Steps**
-* Login to the Cookie Clicker application at https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/
-* Create a new user
-
-**Expected Results**
-* 
-
-**Actual Results**

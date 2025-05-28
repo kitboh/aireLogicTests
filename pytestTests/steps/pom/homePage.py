@@ -1,12 +1,6 @@
 from selenium.webdriver.common.by import By
 
 class homePage():
-
-    # def __init__(self):
-    #     """
-    #     Initialize the homePage class.
-    #     """
-    #     return None
     
     def createNewUser(self, username, context):
         """

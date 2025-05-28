@@ -1,6 +1,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-cypressTests/__pycache__/
+cypressTests/node_modules/
+node_modules/
+**/node_modules/
+*/node_modules/
 *.py[cod]
 *$py.class
 

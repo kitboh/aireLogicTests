@@ -22,3 +22,7 @@ robot --outputdir output tests/
 ```
 
 Test results will be available in the `output` directory.
+
+## Test Failures
+
+Currently 2 tests are failing in this suite due to bugs in the Cookie Clicker application.

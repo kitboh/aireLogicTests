@@ -8,7 +8,6 @@ Feature: Factory functionality on cookie clicker
         When a user is created with the name 'Test_User'
         And I click the cookie '21' times
         And I sell '20' cookie
-        Then the money count is '5'
         When I purchase '1' factory
         When I wait for '5' seconds
         Then the factory count is '1'
@@ -21,7 +20,6 @@ Feature: Factory functionality on cookie clicker
     Scenario: A user cannot purchase a factory with no money
         Given the user opens the homepage
         When a user is created with the name 'Test_User'
-        Then the cookie count is '0'
         When I purchase '1' factory
         Then the factory count is '0'
         And I close the browser

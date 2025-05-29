@@ -7,7 +7,14 @@ Feature: Clicker functionality on a website
         When a user is created with the name 'Test_User'
         And I click the cookie
         Then the cookie count is '1'
-        When I click the cookie
+        And I close the browser
+
+    @clicker_page @full_suite
+    Scenario: 2 clicks will show a score of 2
+        Given the user opens the homepage
+        When a user is created with the name 'Test_User'
+        And I click the cookie
+        And I click the cookie
         Then the cookie count is '2'
         And I close the browser
 
@@ -18,7 +25,7 @@ Feature: Clicker functionality on a website
         When a user is created with the name 'Test_User'
         And I click the cookie
         And I click the cookie
-        When I sell '1' cookie
+        And I sell '1' cookie
         Then the cookie count is '1'
         And the money count is '0.25'
-        Then I close the browser
+        And I close the browser

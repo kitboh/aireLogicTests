@@ -14,6 +14,25 @@ This repository contains automated tests for the Aire Logic Cookie Clicker site 
     pip install robotframework-seleniumlibrary
     ```
 
+## Alternative Installation
+
+For users on Windows, you can alternatively install this repository by initiating a virtual environment with:
+```
+python -m venv venv/
+```
+
+Then enabling the virtual environment with:
+```
+venv\Scripts\activate.bat
+```
+
+Then installing the requirements.txt contents with:
+```
+pip install -r requirements.txt
+```
+
+Note: These instructions are suitable for CMD terminals, rather than Powershell which will use different commands and permissions enabled.
+
 ## Running the Tests
 
 From the `robotTests` folder, run all tests with:

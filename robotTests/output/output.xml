@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.6 on win32)" generated="2025-05-29T17:20:23.303680" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="E:\Code\aireLogicTests\aireLogicTests\robotTests\tests">
+<suite id="s1-s1" name="BasicTests" source="E:\Code\aireLogicTests\aireLogicTests\robotTests\tests\BasicTests.robot">
+<test id="s1-s1-t1" name="Check site can be loaded" line="18">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:23.660650" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:20:23.659650" elapsed="6.316880"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:20:29.977047" elapsed="0.267511"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:30.245554" level="INFO">Page title is 'Cookie Clicker!'.</msg>
+<arg>${EXPECTED_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-05-29T17:20:30.244558" elapsed="0.000996"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:20:30.245554" elapsed="2.672993"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" start="2025-05-29T17:20:23.658650" elapsed="9.259897"/>
+</test>
+<test id="s1-s1-t2" name="Check a user can be created" line="24">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:32.919547" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:20:32.919547" elapsed="5.695513"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:20:38.615586" elapsed="0.272374"/>
+</kw>
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:38.888959" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:38.887960" elapsed="0.043169"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:38.932128" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:38.931129" elapsed="0.278908"/>
+</kw>
+<arg>${USER_NAME}</arg>
+<status status="PASS" start="2025-05-29T17:20:38.887960" elapsed="0.322077"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:39.214200" level="INFO">Page title is 'Cookie Clicker!'.</msg>
+<arg>${EXPECTED_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-05-29T17:20:39.210553" elapsed="0.003647"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:39.219012" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello ${USER_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:20:39.214725" elapsed="0.004287"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:20:39.219012" elapsed="2.685340"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" start="2025-05-29T17:20:32.919547" elapsed="8.984805"/>
+</test>
+<test id="s1-s1-t3" name="Check clicking a cookie increments counter" line="32">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:41.905353" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:20:41.905353" elapsed="5.507322"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:20:47.413189" elapsed="0.264552"/>
+</kw>
+<kw name="Login as Test User" owner="Keywords">
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:47.678739" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:47.678739" elapsed="0.041028"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:47.719767" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:47.719767" elapsed="0.166187"/>
+</kw>
+<arg>Test_User</arg>
+<status status="PASS" start="2025-05-29T17:20:47.678739" elapsed="0.207215"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:47.892589" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello Test_User</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:20:47.886479" elapsed="0.006110"/>
+</kw>
+<status status="PASS" start="2025-05-29T17:20:47.678739" elapsed="0.213850"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:47.893114" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:47.893114" elapsed="0.219290"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:48.113402" level="INFO">Verifying element 'cookies' contains exact text '1'.</msg>
+<arg>cookies</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:20:48.112404" elapsed="0.007067"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:20:48.120469" elapsed="2.687786"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" start="2025-05-29T17:20:41.905353" elapsed="8.902902"/>
+</test>
+<test id="s1-s1-t4" name="Sell a cookie and ensure payment is received" line="41">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:50.809255" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:20:50.809255" elapsed="5.515340"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:20:56.325113" elapsed="0.266676"/>
+</kw>
+<kw name="Login as Test User" owner="Keywords">
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:56.592787" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:56.592787" elapsed="0.046256"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:56.639569" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:56.639569" elapsed="0.169448"/>
+</kw>
+<arg>Test_User</arg>
+<status status="PASS" start="2025-05-29T17:20:56.592787" elapsed="0.216230"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:56.815788" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello Test_User</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:20:56.809550" elapsed="0.006238"/>
+</kw>
+<status status="PASS" start="2025-05-29T17:20:56.592787" elapsed="0.223001"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:56.815788" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:56.815788" elapsed="0.221058"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:57.037847" level="INFO">Typing text '1' into text field 'cookies-to-sell'.</msg>
+<arg>cookies-to-sell</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:57.037847" elapsed="0.010088"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:57.047935" level="INFO">Clicking button 'sell-cookies'.</msg>
+<arg>sell-cookies</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:20:57.047935" elapsed="0.222082"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:57.271021" level="INFO">Verifying element 'cookies' contains exact text '0'.</msg>
+<msg time="2025-05-29T17:20:57.318044" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-29T17:20:57.318044" level="FAIL">The text of element 'cookies' should have been '0' but it was '1'.</msg>
+<arg>cookies</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2025-05-29T17:20:57.270017" elapsed="0.077905">The text of element 'cookies' should have been '0' but it was '1'.</status>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>money</arg>
+<arg>0.25</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2025-05-29T17:20:57.347922" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:20:57.348920" elapsed="2.621869"/>
+</kw>
+<tag>positive</tag>
+<status status="FAIL" start="2025-05-29T17:20:50.808255" elapsed="9.162534">The text of element 'cookies' should have been '0' but it was '1'.</status>
+</test>
+<test id="s1-s1-t5" name="Working version of the above" line="52">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:20:59.971789" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:20:59.971789" elapsed="5.539979"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:21:05.512290" elapsed="0.275319"/>
+</kw>
+<kw name="Login as Test User" owner="Keywords">
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:05.789609" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:05.788609" elapsed="0.044001"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:05.833127" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:05.832610" elapsed="0.169735"/>
+</kw>
+<arg>Test_User</arg>
+<status status="PASS" start="2025-05-29T17:21:05.788609" elapsed="0.214257"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:06.010106" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello Test_User</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.002866" elapsed="0.007240"/>
+</kw>
+<status status="PASS" start="2025-05-29T17:21:05.788609" elapsed="0.221497"/>
+</kw>
+<kw name="Add Cookies" owner="Keywords">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:06.012247" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.011668" elapsed="0.237010"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:06.306154" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.248678" elapsed="0.057476"/>
+</kw>
+<var name="${element}">0</var>
+<status status="PASS" start="2025-05-29T17:21:06.011668" elapsed="0.294486"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:06.307429" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.306900" elapsed="0.217216"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:06.586362" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.524116" elapsed="0.062246"/>
+</kw>
+<var name="${element}">1</var>
+<status status="PASS" start="2025-05-29T17:21:06.306900" elapsed="0.279462"/>
+</iter>
+<var>${element}</var>
+<value>0</value>
+<value>${number_of_cookies}</value>
+<status status="PASS" start="2025-05-29T17:21:06.011144" elapsed="0.575218"/>
+</for>
+<arg>2</arg>
+<status status="PASS" start="2025-05-29T17:21:06.010620" elapsed="0.575742"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:06.587365" level="INFO">Typing text '1' into text field 'cookies-to-sell'.</msg>
+<arg>cookies-to-sell</arg>
+<arg>1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.587365" elapsed="0.009107"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:06.597040" level="INFO">Clicking button 'sell-cookies'.</msg>
+<arg>sell-cookies</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.597040" elapsed="0.222396"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:06.819436" level="INFO">Verifying element 'cookies' contains exact text '1'.</msg>
+<arg>cookies</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.819436" elapsed="0.006005"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:06.826441" level="INFO">Verifying element 'money' contains exact text '0.25'.</msg>
+<arg>money</arg>
+<arg>0.25</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.826441" elapsed="0.004059"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:21:06.830500" elapsed="2.675676"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" start="2025-05-29T17:20:59.971789" elapsed="9.534387"/>
+</test>
+<doc>A test suite for basic functionality of the Cookie Clicker site.
+
+Keywords are imported from the resource file</doc>
+<status status="FAIL" start="2025-05-29T17:20:23.326854" elapsed="46.180379"/>
+</suite>
+<suite id="s1-s2" name="FactoryTests" source="E:\Code\aireLogicTests\aireLogicTests\robotTests\tests\FactoryTests.robot">
+<test id="s1-s2-t1" name="Buy a factory and ensure it operates" line="18">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:09.513234" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:21:09.512232" elapsed="5.476174"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:21:14.988406" elapsed="0.265738"/>
+</kw>
+<kw name="Login as Test User" owner="Keywords">
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:15.255149" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:15.255149" elapsed="0.041146"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:15.296815" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:15.296295" elapsed="0.168241"/>
+</kw>
+<arg>Test_User</arg>
+<status status="PASS" start="2025-05-29T17:21:15.255149" elapsed="0.209387"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:15.471233" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello Test_User</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:21:15.464536" elapsed="0.006697"/>
+</kw>
+<status status="PASS" start="2025-05-29T17:21:15.255149" elapsed="0.216084"/>
+</kw>
+<kw name="Add Cookies" owner="Keywords">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:15.472744" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:15.472240" elapsed="0.211933"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:15.745971" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:15.685174" elapsed="0.060797"/>
+</kw>
+<var name="${element}">0</var>
+<status status="PASS" start="2025-05-29T17:21:15.472240" elapsed="0.273731"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:15.745971" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:15.745971" elapsed="0.216978"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:16.024509" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:15.963949" elapsed="0.060560"/>
+</kw>
+<var name="${element}">1</var>
+<status status="PASS" start="2025-05-29T17:21:15.745971" elapsed="0.278538"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:16.024509" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:16.024509" elapsed="0.217054"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:16.301707" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:16.241563" elapsed="0.060144"/>
+</kw>
+<var name="${element}">2</var>
+<status status="PASS" start="2025-05-29T17:21:16.024509" elapsed="0.277198"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:16.302714" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:16.302714" elapsed="0.216881"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:16.581245" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:16.519595" elapsed="0.061650"/>
+</kw>
+<var name="${element}">3</var>
+<status status="PASS" start="2025-05-29T17:21:16.301707" elapsed="0.279538"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:16.581245" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:16.581245" elapsed="0.217622"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:16.859632" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:16.798867" elapsed="0.060765"/>
+</kw>
+<var name="${element}">4</var>
+<status status="PASS" start="2025-05-29T17:21:16.581245" elapsed="0.278387"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:16.859632" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:16.859632" elapsed="0.218040"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:17.138870" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.077672" elapsed="0.061198"/>
+</kw>
+<var name="${element}">5</var>
+<status status="PASS" start="2025-05-29T17:21:16.859632" elapsed="0.279238"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:17.138870" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.138870" elapsed="0.219756"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:17.418709" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.358626" elapsed="0.060083"/>
+</kw>
+<var name="${element}">6</var>
+<status status="PASS" start="2025-05-29T17:21:17.138870" elapsed="0.279839"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:17.418709" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.418709" elapsed="0.219924"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:17.701044" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.638633" elapsed="0.062411"/>
+</kw>
+<var name="${element}">7</var>
+<status status="PASS" start="2025-05-29T17:21:17.418709" elapsed="0.282335"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:17.701044" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.701044" elapsed="0.217698"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:17.980731" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.918742" elapsed="0.061989"/>
+</kw>
+<var name="${element}">8</var>
+<status status="PASS" start="2025-05-29T17:21:17.701044" elapsed="0.279687"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:17.980731" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:17.980731" elapsed="0.233321"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:18.275547" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:18.215057" elapsed="0.060490"/>
+</kw>
+<var name="${element}">9</var>
+<status status="PASS" start="2025-05-29T17:21:17.980731" elapsed="0.294816"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:18.276639" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:18.275547" elapsed="0.217084"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:18.554020" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:18.492631" elapsed="0.061389"/>
+</kw>
+<var name="${element}">10</var>
+<status status="PASS" start="2025-05-29T17:21:18.275547" elapsed="0.278473"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:18.555026" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:18.554020" elapsed="0.217612"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:18.833505" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:18.771632" elapsed="0.061873"/>
+</kw>
+<var name="${element}">11</var>
+<status status="PASS" start="2025-05-29T17:21:18.554020" elapsed="0.279485"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:18.833505" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:18.833505" elapsed="0.218212"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:19.114195" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.051717" elapsed="0.062478"/>
+</kw>
+<var name="${element}">12</var>
+<status status="PASS" start="2025-05-29T17:21:18.833505" elapsed="0.280690"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:19.114195" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.114195" elapsed="0.215952"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:19.393305" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.331152" elapsed="0.062153"/>
+</kw>
+<var name="${element}">13</var>
+<status status="PASS" start="2025-05-29T17:21:19.114195" elapsed="0.279110"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:19.393305" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.393305" elapsed="0.211823"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:19.665185" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.605128" elapsed="0.060057"/>
+</kw>
+<var name="${element}">14</var>
+<status status="PASS" start="2025-05-29T17:21:19.393305" elapsed="0.271880"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:19.665185" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.665185" elapsed="0.216061"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:19.942066" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.882269" elapsed="0.059797"/>
+</kw>
+<var name="${element}">15</var>
+<status status="PASS" start="2025-05-29T17:21:19.665185" elapsed="0.276881"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:19.942066" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:19.942066" elapsed="0.216225"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:20.219745" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:20.158291" elapsed="0.061454"/>
+</kw>
+<var name="${element}">16</var>
+<status status="PASS" start="2025-05-29T17:21:19.942066" elapsed="0.277679"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:20.219745" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:20.219745" elapsed="0.220088"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:20.500692" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:20.439833" elapsed="0.060859"/>
+</kw>
+<var name="${element}">17</var>
+<status status="PASS" start="2025-05-29T17:21:20.219745" elapsed="0.280947"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:20.500692" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:20.500692" elapsed="0.219109"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:20.780742" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:20.719801" elapsed="0.060941"/>
+</kw>
+<var name="${element}">18</var>
+<status status="PASS" start="2025-05-29T17:21:20.500692" elapsed="0.280050"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:20.780742" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:20.780742" elapsed="0.218602"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:21.061676" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:20.999344" elapsed="0.062332"/>
+</kw>
+<var name="${element}">19</var>
+<status status="PASS" start="2025-05-29T17:21:20.780742" elapsed="0.280934"/>
+</iter>
+<iter>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:21.061676" level="INFO">Clicking button 'Click Cookie!'.</msg>
+<arg>Click Cookie!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.061676" elapsed="0.215141"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:21.338348" level="INFO">Slept 50 milliseconds.</msg>
+<arg>50ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.276817" elapsed="0.061531"/>
+</kw>
+<var name="${element}">20</var>
+<status status="PASS" start="2025-05-29T17:21:21.061676" elapsed="0.276672"/>
+</iter>
+<var>${element}</var>
+<value>0</value>
+<value>${number_of_cookies}</value>
+<status status="PASS" start="2025-05-29T17:21:15.472240" elapsed="5.866108"/>
+</for>
+<arg>21</arg>
+<status status="PASS" start="2025-05-29T17:21:15.471233" elapsed="5.867660"/>
+</kw>
+<kw name="Sell Cookies" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:21.338893" level="INFO">Typing text '20' into text field 'cookies-to-sell'.</msg>
+<arg>cookies-to-sell</arg>
+<arg>${number_of_cookies}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.338893" elapsed="0.010944"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:21.349837" level="INFO">Clicking button 'sell-cookies'.</msg>
+<arg>sell-cookies</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.349837" elapsed="0.220295"/>
+</kw>
+<arg>20</arg>
+<status status="PASS" start="2025-05-29T17:21:21.338893" elapsed="0.231239"/>
+</kw>
+<kw name="Buy Factories" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:21.571137" level="INFO">Typing text '1' into text field 'factories-to-buy'.</msg>
+<arg>factories-to-buy</arg>
+<arg>${number_of_factories}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.571137" elapsed="0.010071"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:21.582209" level="INFO">Clicking button 'buy-factories'.</msg>
+<arg>buy-factories</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.582209" elapsed="0.217728"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2025-05-29T17:21:21.571137" elapsed="0.229313"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:21.800961" level="INFO">Verifying element 'factories' contains exact text '1'.</msg>
+<arg>factories</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.800450" elapsed="0.005515"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:21.807030" level="INFO">Verifying element 'money' contains exact text '2'.</msg>
+<arg>money</arg>
+<arg>2</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.807030" elapsed="0.004000"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>cookies</arg>
+<arg>4</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:21:21.811030" elapsed="3.043642"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:21:24.854672" elapsed="2.600075"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" start="2025-05-29T17:21:09.512232" elapsed="17.943514"/>
+</test>
+<test id="s1-s2-t2" name="Ensure a factory cannot be bought with no money" line="30">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:27.456842" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:21:27.455746" elapsed="5.493036"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:21:32.948782" elapsed="0.262783"/>
+</kw>
+<kw name="Login as Test User" owner="Keywords">
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:33.212564" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:33.212564" elapsed="0.042731"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:33.255295" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:33.255295" elapsed="0.165554"/>
+</kw>
+<arg>Test_User</arg>
+<status status="PASS" start="2025-05-29T17:21:33.212564" elapsed="0.208285"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:33.427406" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello Test_User</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:21:33.420849" elapsed="0.006557"/>
+</kw>
+<status status="PASS" start="2025-05-29T17:21:33.211565" elapsed="0.215841"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:33.427406" level="INFO">Verifying element 'money' contains exact text '0.0'.</msg>
+<arg>money</arg>
+<arg>0.0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:33.427406" elapsed="0.007147"/>
+</kw>
+<kw name="Buy Factories" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:33.435552" level="INFO">Typing text '1' into text field 'factories-to-buy'.</msg>
+<arg>factories-to-buy</arg>
+<arg>${number_of_factories}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:33.435552" elapsed="0.013511"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:33.450063" level="INFO">Clicking button 'buy-factories'.</msg>
+<arg>buy-factories</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:33.449063" elapsed="0.223627"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2025-05-29T17:21:33.435552" elapsed="0.237138"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:33.673694" level="INFO">Verifying element 'factories' contains exact text '0'.</msg>
+<msg time="2025-05-29T17:21:33.726214" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-29T17:21:33.726214" level="FAIL">The text of element 'factories' should have been '0' but it was '1'.</msg>
+<arg>factories</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2025-05-29T17:21:33.672690" elapsed="0.054028">The text of element 'factories' should have been '0' but it was '1'.</status>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>money</arg>
+<arg>0.0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2025-05-29T17:21:33.727231" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>text=You do not have enough money to buy a factory!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2025-05-29T17:21:33.727231" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:21:33.727231" elapsed="2.692702"/>
+</kw>
+<tag>positive</tag>
+<status status="FAIL" start="2025-05-29T17:21:27.455746" elapsed="8.964187">The text of element 'factories' should have been '0' but it was '1'.</status>
+</test>
+<test id="s1-s2-t3" name="Ensure a user cannot buy negative factories" line="41">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:36.421933" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:21:36.420941" elapsed="5.519286"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:21:41.940745" elapsed="0.290841"/>
+</kw>
+<kw name="Login as Test User" owner="Keywords">
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.232660" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.232660" elapsed="0.038831"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.272492" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.272492" elapsed="0.173151"/>
+</kw>
+<arg>Test_User</arg>
+<status status="PASS" start="2025-05-29T17:21:42.232116" elapsed="0.213527"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.452787" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello Test_User</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.445643" elapsed="0.007679"/>
+</kw>
+<status status="PASS" start="2025-05-29T17:21:42.232116" elapsed="0.221206"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.453841" level="INFO">Verifying element 'money' contains exact text '0.0'.</msg>
+<arg>money</arg>
+<arg>0.0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.453322" elapsed="0.008017"/>
+</kw>
+<kw name="Buy Factories" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.462339" level="INFO">Typing text '-1' into text field 'factories-to-buy'.</msg>
+<arg>factories-to-buy</arg>
+<arg>${number_of_factories}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.462339" elapsed="0.012241"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.474580" level="INFO">Clicking button 'buy-factories'.</msg>
+<arg>buy-factories</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.474580" elapsed="0.218296"/>
+</kw>
+<arg>-1</arg>
+<status status="PASS" start="2025-05-29T17:21:42.461339" elapsed="0.232542"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.693881" level="INFO">Verifying element 'factories' contains exact text '0'.</msg>
+<arg>factories</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.693881" elapsed="0.005098"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:42.699980" level="INFO">Verifying element 'money' contains exact text '0.0'.</msg>
+<arg>money</arg>
+<arg>0.0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.699980" elapsed="0.005000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:21:42.704980" elapsed="2.693635"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" start="2025-05-29T17:21:36.420941" elapsed="8.977674"/>
+</test>
+<test id="s1-s2-t4" name="Validate factory production speed" line="51">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:45.400616" level="INFO">Opening browser 'Firefox' to base url 'https://christopher-corbishley-2025-05-27.cookieclickertechtest.airelogic.com/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-29T17:21:45.400616" elapsed="5.561887"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-29T17:21:50.963023" elapsed="0.264758"/>
+</kw>
+<kw name="Login as Test User" owner="Keywords">
+<kw name="Create User" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:51.228837" level="INFO">Typing text 'Test_User' into text field 'name=name'.</msg>
+<arg>name=name</arg>
+<arg>${test_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.228837" elapsed="0.040098"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:51.269934" level="INFO">Clicking button 'Start!'.</msg>
+<arg>locator=Start!</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.269934" elapsed="0.185213"/>
+</kw>
+<arg>Test_User</arg>
+<status status="PASS" start="2025-05-29T17:21:51.228316" elapsed="0.226831"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:51.464498" level="INFO">Current page contains text 'Hello Test_User'.</msg>
+<arg>text=Hello Test_User</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.455147" elapsed="0.009351"/>
+</kw>
+<status status="PASS" start="2025-05-29T17:21:51.228316" elapsed="0.236700"/>
+</kw>
+<kw name="Buy Factories" owner="Keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:51.465527" level="INFO">Typing text '1' into text field 'factories-to-buy'.</msg>
+<arg>factories-to-buy</arg>
+<arg>${number_of_factories}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.465527" elapsed="0.012835"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:51.478362" level="INFO">Clicking button 'buy-factories'.</msg>
+<arg>buy-factories</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.478362" elapsed="0.226886"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2025-05-29T17:21:51.465016" elapsed="0.240232"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:51.734928" level="INFO">Slept 25 milliseconds.</msg>
+<arg>25ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.705248" elapsed="0.029680"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:51.734928" level="INFO">Verifying element 'factories' contains exact text '1'.</msg>
+<arg>factories</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.734928" elapsed="0.007063"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-29T17:21:56.750949" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-29T17:21:51.741991" elapsed="5.008958"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-29T17:21:56.750949" level="INFO">Verifying element 'cookies' contains exact text '5'.</msg>
+<arg>cookies</arg>
+<arg>5</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-29T17:21:56.750949" elapsed="0.006070"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-29T17:21:56.757019" elapsed="2.588342"/>
+</kw>
+<tag>positive</tag>
+<status status="PASS" start="2025-05-29T17:21:45.399616" elapsed="13.946805"/>
+</test>
+<doc>A test suite for basic functionality of the Factories functionality.
+
+Keywords are imported from the resource file</doc>
+<status status="FAIL" start="2025-05-29T17:21:09.507233" elapsed="49.839188"/>
+</suite>
+<status status="FAIL" start="2025-05-29T17:20:23.304680" elapsed="96.042739"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="7" fail="2" skip="0">positive</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="7" fail="2" skip="0">Tests</stat>
+<stat name="BasicTests" id="s1-s1" pass="4" fail="1" skip="0">Tests.BasicTests</stat>
+<stat name="FactoryTests" id="s1-s2" pass="3" fail="1" skip="0">Tests.FactoryTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
